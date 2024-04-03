@@ -6,6 +6,8 @@ Welcome to Flask Blog! This project is a simple blogging application built using
 - Read individual blog posts for more details 📖
 - Add new blog posts ✍️
 - Delete unwanted blog posts 🗑️
+- Like blog posts ❤️
+- Filter posts by tags 🏷️
 
 ## Technologies Used
 This project utilizes the following technologies:
@@ -13,10 +15,14 @@ This project utilizes the following technologies:
 - Flask: A lightweight web framework for Python 🐍
 - HTML: For structuring the web pages 🌐
 - CSS: For styling the web pages 🎨
+- JavaScript: For dynamic client-side interactions 🚀
 - JSON: For storing data in a lightweight, human-readable format 🗃️
 
 ## Future ideas
 - [ ] SQLite: A lightweight relational database management system 🗃
+- [ ] Add user authentication and authorization for secure access to blog features 🔐
+- [ ] Implement a search functionality to search for blog posts by keywords 🔍
+- [ ] Allow users to comment on blog posts for interactive discussions 💬
 
 ## Getting Started
 To get started with Flask Blog, follow these steps:
