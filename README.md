@@ -19,6 +19,7 @@ This project utilizes the following technologies:
 - JSON: For storing data in a lightweight, human-readable format 🗃️
 
 ## Future ideas
+- [ ] When updating a post, update tags also 🏷️
 - [ ] SQLite: A lightweight relational database management system 🗃
 - [ ] Add user authentication and authorization for secure access to blog features 🔐
 - [ ] Implement a search functionality to search for blog posts by keywords 🔍
