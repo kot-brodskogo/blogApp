@@ -1,5 +1,6 @@
 import json
 import uuid
+import os
 from flask import Flask, render_template, request, redirect, url_for, jsonify
 
 app = Flask(__name__)
@@ -8,6 +9,9 @@ app = Flask(__name__)
 class BlogManager:
     def __init__(self, data_file):
         self.data_file = data_file
+        if not os.path.exists(data_file):
+            with open(data_file, 'w') as f:
+                json.dump([], f)
         self.blog_posts = []  # Initialize blog_posts as an empty list
         self.load_posts()
 
