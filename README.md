@@ -13,7 +13,10 @@ This project utilizes the following technologies:
 - Flask: A lightweight web framework for Python 🐍
 - HTML: For structuring the web pages 🌐
 - CSS: For styling the web pages 🎨
-- SQLite: A lightweight relational database management system 🗃
+- JSON: For storing data in a lightweight, human-readable format 🗃️
+
+## Future ideas
+- [ ] SQLite: A lightweight relational database management system 🗃
 
 ## Getting Started
 To get started with Flask Blog, follow these steps:
