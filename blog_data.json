@@ -3,24 +3,34 @@
         "id": 1,
         "author": "John Doe",
         "title": "First Post",
-        "content": "This is my first post."
-    },
-    {
-        "id": "b6a04091f7f84e5fabd082e9fa6ff1fb",
-        "title": "New",
-        "author": "Me",
-        "content": "Let's test it"
-    },
-    {
-        "id": "a0204571a2b946d1a36fe2ebb9f738a1",
-        "title": "Can I figure out the delete option?",
-        "author": "Me",
-        "content": "Someday probably I will"
+        "content": "This is my first post. I want to see what happens to likes.",
+        "tags": [
+            "python",
+            "flask",
+            "web development"
+        ],
+        "likes": 3
     },
     {
         "id": "49e75ed27f614ea08798c60be1fd8ddc",
         "title": "Something",
         "author": "Jessie",
-        "content": "Updated version is here"
+        "content": "Updated version is here",
+        "tags": [
+            "javascript",
+            "frontend"
+        ],
+        "likes": 2
+    },
+    {
+        "id": "6c013bff80f9498ebe2ec91098f6f46f",
+        "title": "Something big",
+        "author": "Gloria or is it... Moto-Moto?",
+        "content": "I like them big, I like them chunky\r\n(Chunky)\r\nI like them big, I like them plumpy\r\n(Plumpy)\r\nI like them round, with something, something\r\n(Something)\r\nThey like my sound, they think I'm funky\r\n(Funky)\r\nMy name is Moto Moto, yeah, you say it double\r\nSay my name girl (Moto, Moto)\r\nSay it again (Moto, Moto)\r\nI'm nice and smooth, so nice and sassy\r\n(Sassy)\r\nNone of the hippo's here don't wanna get next to me",
+        "tags": [
+            "python",
+            "lyrics"
+        ],
+        "likes": 0
     }
 ]

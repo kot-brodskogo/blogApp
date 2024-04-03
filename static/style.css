@@ -101,3 +101,36 @@ input[type="submit"]:hover {
 .update-btn:hover {
     background-color: #218838; /* Darker green on hover */
 }
+
+.like-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.like-btn:hover {
+    background-color: #0056b3;
+}
+
+.add-btn {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.add-btn:hover {
+    background-color: #218838;
+}

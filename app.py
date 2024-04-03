@@ -1,6 +1,6 @@
 import json
 import uuid
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, jsonify
 
 app = Flask(__name__)
 
@@ -19,7 +19,9 @@ class BlogManager:
         with open(self.data_file, 'w') as f:
             json.dump(self.blog_posts, f, indent=4)
 
-    def add_post(self, new_post):
+    def add_post(self, new_post, tags):
+        new_post['tags'] = tags
+        new_post['likes'] = 0  # Initialize likes count to 0
         self.blog_posts.append(new_post)
         self.save_posts()
 
@@ -34,6 +36,12 @@ class BlogManager:
             if str(post['id']) == post_id:
                 return post
         return None
+
+    def like_post(self, post_id):
+        post = self.fetch_post_by_id(post_id)
+        if post:
+            post['likes'] = post.get('likes', 0) + 1
+            self.save_posts()
 
 
 blog_manager = BlogManager('blog_data.json')
@@ -62,9 +70,10 @@ def add():
             'author': author,
             'content': content
         }
+        tags = request.form.get('tags').split(',')
 
         # Add the new blog post using the BlogManager instance
-        blog_manager.add_post(new_post)
+        blog_manager.add_post(new_post, tags)
 
         # Redirect to the index page after adding the new blog post
         return redirect(url_for('index'))
@@ -74,7 +83,8 @@ def add():
 @app.route('/delete/<post_id>', methods=['POST'])
 def delete(post_id):
     blog_manager.delete_post(post_id)
-    return redirect(url_for('index'))
+    # Return a JSON response indicating success
+    return jsonify({'success': True})
 
 
 @app.route('/update/<post_id>', methods=['GET', 'POST'])
@@ -104,6 +114,19 @@ def update(post_id):
 
     # If it's a GET request, display the update form
     return render_template('update.html', post=post)
+
+
+# Inside app.py
+@app.route('/like/<post_id>', methods=['POST'])
+def like_post(post_id):
+    blog_manager.like_post(str(post_id))
+    return redirect(url_for('index'))
+
+
+@app.route('/tag/<tag>')
+def tag_filter(tag):
+    filtered_posts = [post for post in blog_manager.blog_posts if tag in post.get('tags', [])]
+    return render_template('index.html', posts=filtered_posts)
 
 
 def generate_unique_id():
