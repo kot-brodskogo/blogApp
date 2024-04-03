@@ -24,8 +24,16 @@ class BlogManager:
         self.save_posts()
 
     def delete_post(self, post_id):
-        self.blog_posts = [post for post in self.blog_posts if str(post['id']) != post_id]
-        self.save_posts()
+        post_to_delete = self.fetch_post_by_id(post_id)
+        if post_to_delete:
+            self.blog_posts.remove(post_to_delete)
+            self.save_posts()
+
+    def fetch_post_by_id(self, post_id):
+        for post in self.blog_posts:
+            if str(post['id']) == post_id:
+                return post
+        return None
 
 
 blog_manager = BlogManager('blog_data.json')
@@ -67,6 +75,35 @@ def add():
 def delete(post_id):
     blog_manager.delete_post(post_id)
     return redirect(url_for('index'))
+
+
+@app.route('/update/<post_id>', methods=['GET', 'POST'])
+def update(post_id):
+    # Fetch the blog posts from the JSON file
+    post = blog_manager.fetch_post_by_id(post_id)
+    if post is None:
+        # Post not found
+        return "Post not found", 404
+
+    if request.method == 'POST':
+        # Update the post details based on the form submission
+        title = request.form.get('title')
+        author = request.form.get('author')
+        content = request.form.get('content')
+
+        # Update the post details
+        post['title'] = title
+        post['author'] = author
+        post['content'] = content
+
+        # Save the updated blog posts to the JSON file
+        blog_manager.save_posts()
+
+        # Redirect back to the index page
+        return redirect(url_for('index'))
+
+    # If it's a GET request, display the update form
+    return render_template('update.html', post=post)
 
 
 def generate_unique_id():

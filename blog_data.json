@@ -8,7 +8,7 @@
     {
         "id": "b6a04091f7f84e5fabd082e9fa6ff1fb",
         "title": "New",
-        "author": "I am",
+        "author": "Me",
         "content": "Let's test it"
     },
     {
@@ -16,5 +16,11 @@
         "title": "Can I figure out the delete option?",
         "author": "Me",
         "content": "Someday probably I will"
+    },
+    {
+        "id": "49e75ed27f614ea08798c60be1fd8ddc",
+        "title": "Something",
+        "author": "Jessie",
+        "content": "Updated version is here"
     }
 ]
