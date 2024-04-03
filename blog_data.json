@@ -6,15 +6,15 @@
         "content": "This is my first post."
     },
     {
-        "id": 2,
-        "author": "Jane Doe",
-        "title": "Second Post",
-        "content": "This is another post."
+        "id": "b6a04091f7f84e5fabd082e9fa6ff1fb",
+        "title": "New",
+        "author": "I am",
+        "content": "Let's test it"
     },
     {
-        "id": "86a2e14f3f034a8d88c07dc3c0880b6d",
-        "title": "Some title",
-        "author": "Someone",
-        "content": "Dunno what to write, but let's say"
+        "id": "a0204571a2b946d1a36fe2ebb9f738a1",
+        "title": "Can I figure out the delete option?",
+        "author": "Me",
+        "content": "Someday probably I will"
     }
 ]
