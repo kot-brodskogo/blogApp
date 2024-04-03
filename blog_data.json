@@ -1,14 +1,20 @@
 [
-   {
-      "id":1,
-      "author":"John Doe",
-      "title":"First Post",
-      "content":"This is my first post."
-   },
-   {
-      "id":2,
-      "author":"Jane Doe",
-      "title":"Second Post",
-      "content":"This is another post."
-   }
+    {
+        "id": 1,
+        "author": "John Doe",
+        "title": "First Post",
+        "content": "This is my first post."
+    },
+    {
+        "id": 2,
+        "author": "Jane Doe",
+        "title": "Second Post",
+        "content": "This is another post."
+    },
+    {
+        "id": "86a2e14f3f034a8d88c07dc3c0880b6d",
+        "title": "Some title",
+        "author": "Someone",
+        "content": "Dunno what to write, but let's say"
+    }
 ]
